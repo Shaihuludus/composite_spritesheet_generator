@@ -1,17 +1,15 @@
 @tool
 class_name CompositeSpritSheetGenerator extends EditorPlugin
 
-const DisplaySpritesPanel = preload("res://addons/compositespritesheetgenerator/viewscreen/DisplaySprites.tscn")
-
 var display_sprites_instance: DisplaySprites 
 var composite_sprite_dock: EditorDock
 
-func _enter_tree():
-	display_sprites_instance = DisplaySpritesPanel.instantiate()	
+func _enter_tree():	
+	display_sprites_instance = preload("res://addons/compositespritesheetgenerator/viewscreen/DisplaySprites.tscn").instantiate()	
 	EditorInterface.get_editor_main_screen().add_child(display_sprites_instance)	
 	_make_visible(false)
 	
-	var composite_sprite_dock_scene: CompositeSpriteDock = preload("res://addons/compositespritesheetgenerator/CompositeSpriteDock.tscn").instantiate()
+	var composite_sprite_dock_scene: CompositeSpriteDock = preload("res://addons/compositespritesheetgenerator/dock/composite_sprite_dock.tscn").instantiate()
 	composite_sprite_dock = EditorDock.new()
 	composite_sprite_dock.add_child(composite_sprite_dock_scene)
 	composite_sprite_dock.title = "Composite Sprite Creator"

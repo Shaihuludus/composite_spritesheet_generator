@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dwn7jfp5737o4"]
+
+[node name="HBoxContainer" type="HBoxContainer" unique_id=909613658]
+
+[node name="ItemList" type="ItemList" parent="." unique_id=1921673772]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="." unique_id=1247475194]
+layout_mode = 2
+text = "TEST
+"

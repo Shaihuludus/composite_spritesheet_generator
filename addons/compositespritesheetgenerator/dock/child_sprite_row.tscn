@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dd5gjxesbcvo5"]
+
+[ext_resource type="Script" uid="uid://b0nyc8r25fyie" path="res://addons/compositespritesheetgenerator/dock/scripts/child_sprite_row.gd" id="1_l013k"]
+
+[node name="HBoxContainer" type="HBoxContainer" unique_id=746339374]
+offset_right = 277.0
+offset_bottom = 40.0
+script = ExtResource("1_l013k")
+
+[node name="ChildFile" type="LineEdit" parent="." unique_id=751961679]
+custom_minimum_size = Vector2(187, 0)
+layout_mode = 2
+placeholder_text = "Empty"
+editable = false
+
+[node name="ZIndex" type="SpinBox" parent="." unique_id=2088551608]
+layout_mode = 2
+min_value = -100.0

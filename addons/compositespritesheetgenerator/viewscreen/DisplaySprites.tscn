@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://3vtgnkfpyl6e"]
 
 [ext_resource type="Script" uid="uid://dnjogaytsuac1" path="res://addons/compositespritesheetgenerator/viewscreen/display_sprites.gd" id="1_vk0hk"]
-[ext_resource type="Script" uid="uid://ddq3ry6m2vt0i" path="res://addons/compositespritesheetgenerator/sub_viewport.gd" id="4_63pp6"]
+[ext_resource type="Script" uid="uid://ddq3ry6m2vt0i" path="res://addons/compositespritesheetgenerator/viewscreen/sub_viewport.gd" id="4_63pp6"]
 
 [node name="DisplaySprites" type="Node2D" unique_id=1344407994]
 script = ExtResource("1_vk0hk")

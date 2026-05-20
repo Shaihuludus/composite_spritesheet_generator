@@ -1,14 +1,15 @@
 @tool
 class_name CompositeSpriteDock extends Control
 
-@onready var save_button = $Button
+@onready var save_button: Button = $ScrollContainer/VBoxContainer/SaveButton
 @onready var save_file_dialog: FileDialog = $SaveFileDialog
 @onready var load_file_dialog: FileDialog = $LoadFileDialog
-@onready var main_sprite: LineEdit = $Panel/LineEdit
-@onready var load_main_button: Button = $Panel/LoadMainButton
-@onready var add_child_sprite_button: Button = $AddChildSprite
-@onready var child_sprite_list: ItemList = $ItemList
-@onready var remove_child_sprite_button: Button = $RemoveChildSprite
+@onready var main_sprite: LineEdit = $ScrollContainer/VBoxContainer/HBoxContainer2/MainSprite
+@onready var load_main_button: Button = $ScrollContainer/VBoxContainer/HBoxContainer2/LoadMainButton
+@onready var add_child_sprite_button: Button = $ScrollContainer/VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/AddChildSpriteButton
+@onready var child_sprite_list: ItemList = $ScrollContainer/VBoxContainer/VBoxContainer/HBoxContainer/ChildList
+@onready var remove_child_sprite_button: Button = $ScrollContainer/VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/RemoveChildSpriteButton
+@onready var sprite_child_list_2: VBoxContainer = $ScrollContainer/VBoxContainer/SpriteChildList2
 
 var display_sprites: DisplaySprites
 
@@ -36,6 +37,10 @@ func load_child_sprite():
 func add_child_sprite(file_name: String):
 	display_sprites.add_child_sprite(file_name)
 	child_sprite_list.add_item(file_name)
+	var chid_item: ChildSpriteRow = preload("res://addons/compositespritesheetgenerator/dock/child_sprite_row.tscn").instantiate()		
+	sprite_child_list_2.add_child(chid_item)
+	chid_item.child_file.text = file_name
+		
 	load_file_dialog.disconnect("file_selected", self.add_child_sprite)
 	pass
 	
