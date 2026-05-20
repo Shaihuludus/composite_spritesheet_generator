@@ -122,3 +122,11 @@ offset_top = 182.0
 offset_right = 464.0
 offset_bottom = 213.0
 text = "Remove Spritesheet"
+
+[node name="RemoveChildSprite" type="Button" parent="RemoveChildSprite" unique_id=455138325]
+layout_mode = 0
+offset_left = 308.0
+offset_top = 182.0
+offset_right = 464.0
+offset_bottom = 213.0
+text = "Remove Spritesheet"
