@@ -1,0 +1,1 @@
+Addon for GODOT to create single spritesheet from multiple composite spritesheets
