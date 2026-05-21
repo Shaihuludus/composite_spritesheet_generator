@@ -6,10 +6,8 @@ extends SubViewport
 var viewportSprite: Node2D
 var file_name: String
 
-
-func snapshot(file: String):
-	file_name = file
-	print("Trying to snaphost")
+func snapshot(file_name: String):
+	self.file_name = file_name	
 	viewportSprite = spritesheet_view.duplicate()
 	add_child(viewportSprite)
 	size = viewportSprite.texture.get_size() 
@@ -17,8 +15,7 @@ func snapshot(file: String):
 	RenderingServer.frame_post_draw.connect(saveImage)
 	pass
 	
-func saveImage():
-	print("Trying to save")	
+func saveImage():	
 	var image: Image = get_texture().get_image()
 	image.save_png(file_name)		
 	RenderingServer.frame_post_draw.disconnect(saveImage)

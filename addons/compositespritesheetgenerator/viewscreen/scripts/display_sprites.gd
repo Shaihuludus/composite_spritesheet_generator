@@ -6,20 +6,10 @@ class_name DisplaySprites extends Node2D
 
 var child_sprites: Array[String] = []
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func delete_child_sprite(sprite_index: int):
 	child_sprites.remove_at(sprite_index)
 	reloadMainView()
 	
-
 func add_child_sprite(file_name: String):	
 	child_sprites.append(file_name)
 	reloadMainView()
@@ -36,5 +26,19 @@ func reloadMainView():
 
 func set_main_sprite(file_name: String):
 	sprite_sheet_main_view.texture = load(file_name)
-	reloadMainView()	
+	sprite_sheet_main_view.position.x = sprite_sheet_main_view.texture.get_size().x / 2
+	sprite_sheet_main_view.position.y = sprite_sheet_main_view.texture.get_size().y / 2
+	reloadMainView()
+
+func set_sprite_index(sprite_index: int, z_index: int):
+	if sprite_sheet_main_view:
+		sprite_sheet_main_view.get_child(sprite_index).z_index = z_index
+
+func set_sprite_x_offset(sprite_index: int, offset: int):
+	if sprite_sheet_main_view:
+		sprite_sheet_main_view.get_child(sprite_index).position.x = offset	
+
+func set_sprite_y_offset(sprite_index: int, offset: int):
+	if sprite_sheet_main_view:
+		sprite_sheet_main_view.get_child(sprite_index).position.y = offset				
 	
