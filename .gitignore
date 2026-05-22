@@ -16,3 +16,6 @@ mono_crash.*.json
 
 sprite_test/
 addons/plugin_refresher/
+
+# README screenshots
+/images/*.import
